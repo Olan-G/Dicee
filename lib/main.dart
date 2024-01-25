@@ -53,6 +53,7 @@ class _DicePageState extends State<DicePage> {
                   //Random().nextInt(6) - generates numbers from 0-5
                   //Random().nextInt(6) + 1 - generates numbers from 1-6
                   leftDiceNumber = Random().nextInt(6) + 1;
+                  rightDiceNumber = Random().nextInt(6) + 1;
                 });
               },
               child: Image.asset('images/dice$leftDiceNumber.png'),
@@ -66,6 +67,7 @@ class _DicePageState extends State<DicePage> {
                 setState(() {
                   //Random().nextInt(6) - generates numbers from 0-5
                   //Random().nextInt(6) + 1 - generates numbers from 1-6
+                  leftDiceNumber = Random().nextInt(6) + 1;
                   rightDiceNumber = Random().nextInt(6) + 1;
                 });
               },
