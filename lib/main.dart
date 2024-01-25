@@ -39,6 +39,16 @@ class _DicePageState extends State<DicePage> {
   int leftDiceNumber = 1;
   int rightDiceNumber = 1;
 
+  void roll() {
+    //see what changed, update, and redraws the entire screen
+    setState(() {
+      //Random().nextInt(6) - generates numbers from 0-5
+      //Random().nextInt(6) + 1 - generates numbers from 1-6
+      leftDiceNumber = Random().nextInt(6) + 1;
+      rightDiceNumber = Random().nextInt(6) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -48,13 +58,8 @@ class _DicePageState extends State<DicePage> {
             child: TextButton(
               //onPressed function - what to do when button gets pressed
               onPressed: () {
-                //see what changed, update, and redraws the entire screen
-                setState(() {
-                  //Random().nextInt(6) - generates numbers from 0-5
-                  //Random().nextInt(6) + 1 - generates numbers from 1-6
-                  leftDiceNumber = Random().nextInt(6) + 1;
-                  rightDiceNumber = Random().nextInt(6) + 1;
-                });
+                //calls roll function to change dice face
+                roll();
               },
               child: Image.asset('images/dice$leftDiceNumber.png'),
             ),
@@ -63,13 +68,8 @@ class _DicePageState extends State<DicePage> {
             flex: 1,
             child: TextButton(
               onPressed: () {
-                //see what changed, update, and redraws the entire screen
-                setState(() {
-                  //Random().nextInt(6) - generates numbers from 0-5
-                  //Random().nextInt(6) + 1 - generates numbers from 1-6
-                  leftDiceNumber = Random().nextInt(6) + 1;
-                  rightDiceNumber = Random().nextInt(6) + 1;
-                });
+                //calls roll function to change dice face
+                roll();
               },
               child: Image.asset('images/dice$rightDiceNumber.png'),
             ),
